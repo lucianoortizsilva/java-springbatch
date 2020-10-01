@@ -9,7 +9,7 @@ import org.springframework.batch.item.database.BeanPropertyItemSqlParameterSourc
 import org.springframework.batch.item.database.JdbcBatchItemWriter;
 import org.springframework.beans.factory.annotation.Autowired;
 
-import com.lucianoortizsilva.batch.dto.ProdutoOutput;
+import com.lucianoortizsilva.batch.model.ProdutoOutput;
 
 import lombok.extern.slf4j.Slf4j;
 
@@ -19,7 +19,7 @@ public class ProdutoWriter extends JdbcBatchItemWriter<ProdutoOutput> implements
 	@Autowired
 	public ProdutoWriter(final DataSource dataSource) {
 		this.setItemSqlParameterSourceProvider(new BeanPropertyItemSqlParameterSourceProvider<ProdutoOutput>());
-		this.setSql("INSERT INTO input_produto (descricao, ean, categoria) VALUES (:descricao, :ean, :categoria)");
+		this.setSql("INSERT INTO PRODUTO_OUTPUT (descricao, ean, categoria, status) VALUES (:descricao, :ean, :categoria, :status)");
 		this.setDataSource(dataSource);
 	}
 

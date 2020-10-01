@@ -2,7 +2,7 @@ package com.lucianoortizsilva.batch.enumeration;
 
 public enum Status {
 
-	NAO_PROCESSADO, PROCESSANDO, PROCESSADO;
+	FINALIZADO, AGUARDANDO, ERRO;
 
 	private Integer codigo;
 

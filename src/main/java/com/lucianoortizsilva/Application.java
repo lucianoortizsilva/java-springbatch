@@ -6,8 +6,8 @@ import org.springframework.boot.autoconfigure.domain.EntityScan;
 import org.springframework.scheduling.annotation.EnableScheduling;
 
 @EnableScheduling
-@SpringBootApplication      
-@EntityScan(basePackages = "com.lucianoortizsilva.cadastro.model")
+@SpringBootApplication
+@EntityScan(basePackages = { "com.lucianoortizsilva.batch.model", "com.lucianoortizsilva.cadastro.model" })
 public class Application {
 
 	public static void main(String[] args) {

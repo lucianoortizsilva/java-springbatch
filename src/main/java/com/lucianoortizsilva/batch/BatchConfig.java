@@ -15,8 +15,8 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 import com.lucianoortizsilva.batch.dto.ProdutoInput;
-import com.lucianoortizsilva.batch.dto.ProdutoOutput;
 import com.lucianoortizsilva.batch.listener.JobCompletionNotificationListener;
+import com.lucianoortizsilva.batch.model.ProdutoOutput;
 import com.lucianoortizsilva.batch.step.ProdutoProcessor;
 import com.lucianoortizsilva.batch.step.ProdutoReader;
 import com.lucianoortizsilva.batch.step.ProdutoWriter;

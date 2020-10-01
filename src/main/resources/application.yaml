@@ -14,6 +14,4 @@ spring:
      hibernate:
        dialect: org.hibernate.dialect.H2Dialect
        show_sql: true
-       ddl-auto: create    
-  liquibase:
-    change-log: 'classpath:/db/changelog/changelog-master.xml'
+       ddl-auto: create
