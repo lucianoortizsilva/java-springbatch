@@ -19,7 +19,7 @@ public class ProdutoWriter extends JdbcBatchItemWriter<ProdutoOutput> implements
 	@Autowired
 	public ProdutoWriter(final DataSource dataSource) {
 		this.setItemSqlParameterSourceProvider(new BeanPropertyItemSqlParameterSourceProvider<ProdutoOutput>());
-		this.setSql("INSERT INTO input_produto (descricao, ean, categoria) VALUES (:descricao, :ean, :categoriaTexto)");
+		this.setSql("INSERT INTO input_produto (descricao, ean, categoria) VALUES (:descricao, :ean, :categoria)");
 		this.setDataSource(dataSource);
 	}
 

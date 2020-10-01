@@ -12,7 +12,9 @@
 			    id BIGINT IDENTITY NOT NULL PRIMARY KEY,
 			    descricao varchar(20),
 			    ean varchar(13),
-			    categoria varchar(15)
+			    mensagem varchar(40),
+			    status varchar(14),
+			    categoria int
 			);
 		</sql>
 	</changeSet>

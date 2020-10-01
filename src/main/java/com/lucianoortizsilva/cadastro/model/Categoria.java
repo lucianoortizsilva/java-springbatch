@@ -1,4 +1,4 @@
-package com.lucianoortizsilva.batch.enumeration;
+package com.lucianoortizsilva.cadastro.model;
 
 public enum Categoria {
 
