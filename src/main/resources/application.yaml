@@ -1,0 +1,12 @@
+spring:
+  batch.job.enabled: false
+  datasource:
+    url: jdbc:h2:mem:batchdb
+    driverClassName: org.h2.Driver
+    username: sa
+    password: sa
+  h2:
+    console:
+      enabled: true
+  liquibase:
+    change-log: 'classpath:/db/changelog/changelog-master.xml'
