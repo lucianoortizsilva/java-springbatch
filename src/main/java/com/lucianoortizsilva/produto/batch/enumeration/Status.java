@@ -1,4 +1,4 @@
-package com.lucianoortizsilva.batch.enumeration;
+package com.lucianoortizsilva.produto.batch.enumeration;
 
 public enum Status {
 

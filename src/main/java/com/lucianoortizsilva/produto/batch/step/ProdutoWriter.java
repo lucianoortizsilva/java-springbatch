@@ -1,4 +1,4 @@
-package com.lucianoortizsilva.batch.step;
+package com.lucianoortizsilva.produto.batch.step;
 
 import java.util.List;
 
@@ -9,7 +9,7 @@ import org.springframework.batch.item.database.BeanPropertyItemSqlParameterSourc
 import org.springframework.batch.item.database.JdbcBatchItemWriter;
 import org.springframework.beans.factory.annotation.Autowired;
 
-import com.lucianoortizsilva.batch.entity.BatchOutputProduto;
+import com.lucianoortizsilva.produto.batch.entity.BatchOutputProduto;
 
 import lombok.extern.slf4j.Slf4j;
 

@@ -1,10 +1,10 @@
-package com.lucianoortizsilva.batch.step;
+package com.lucianoortizsilva.produto.batch.step;
 
 import org.springframework.batch.item.ItemProcessor;
 
-import com.lucianoortizsilva.batch.dto.BatchInputProduto;
-import com.lucianoortizsilva.batch.entity.BatchOutputProduto;
-import com.lucianoortizsilva.batch.enumeration.Status;
+import com.lucianoortizsilva.produto.batch.dto.BatchInputProduto;
+import com.lucianoortizsilva.produto.batch.entity.BatchOutputProduto;
+import com.lucianoortizsilva.produto.batch.enumeration.Status;
 
 import lombok.extern.slf4j.Slf4j;
 

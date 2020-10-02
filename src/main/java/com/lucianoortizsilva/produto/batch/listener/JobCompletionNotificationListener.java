@@ -1,4 +1,4 @@
-package com.lucianoortizsilva.batch.listener;
+package com.lucianoortizsilva.produto.batch.listener;
 
 import org.springframework.batch.core.BatchStatus;
 import org.springframework.batch.core.JobExecution;

@@ -1,4 +1,4 @@
-package com.lucianoortizsilva.batch;
+package com.lucianoortizsilva.produto.batch;
 
 import java.util.List;
 
@@ -7,9 +7,9 @@ import javax.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.lucianoortizsilva.batch.entity.BatchOutputProduto;
-import com.lucianoortizsilva.batch.enumeration.Status;
-import com.lucianoortizsilva.batch.repository.BatchOutputProdutoRepository;
+import com.lucianoortizsilva.produto.batch.entity.BatchOutputProduto;
+import com.lucianoortizsilva.produto.batch.enumeration.Status;
+import com.lucianoortizsilva.produto.batch.repository.BatchOutputProdutoRepository;
 
 @Service
 public class BatchProdutoService {

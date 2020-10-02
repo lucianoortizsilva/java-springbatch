@@ -1,4 +1,4 @@
-package com.lucianoortizsilva.cadastro;
+package com.lucianoortizsilva.produto.cadastro;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -9,11 +9,11 @@ import org.apache.commons.collections4.CollectionUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.lucianoortizsilva.batch.BatchProdutoService;
-import com.lucianoortizsilva.batch.entity.BatchOutputProduto;
-import com.lucianoortizsilva.cadastro.entity.Categoria;
-import com.lucianoortizsilva.cadastro.entity.Produto;
-import com.lucianoortizsilva.cadastro.repository.ProdutoRepository;
+import com.lucianoortizsilva.produto.batch.BatchProdutoService;
+import com.lucianoortizsilva.produto.batch.entity.BatchOutputProduto;
+import com.lucianoortizsilva.produto.cadastro.entity.Categoria;
+import com.lucianoortizsilva.produto.cadastro.entity.Produto;
+import com.lucianoortizsilva.produto.cadastro.repository.ProdutoRepository;
 
 import lombok.extern.slf4j.Slf4j;
 

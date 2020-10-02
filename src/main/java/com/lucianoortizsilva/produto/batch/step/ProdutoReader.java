@@ -1,4 +1,4 @@
-package com.lucianoortizsilva.batch.step;
+package com.lucianoortizsilva.produto.batch.step;
 
 import java.util.Objects;
 
@@ -11,7 +11,7 @@ import org.springframework.batch.item.file.transform.DelimitedLineTokenizer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.ClassPathResource;
 
-import com.lucianoortizsilva.batch.dto.BatchInputProduto;
+import com.lucianoortizsilva.produto.batch.dto.BatchInputProduto;
 
 import lombok.extern.slf4j.Slf4j;
 

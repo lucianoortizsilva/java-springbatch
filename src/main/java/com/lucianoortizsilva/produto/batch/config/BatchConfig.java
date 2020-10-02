@@ -1,4 +1,4 @@
-package com.lucianoortizsilva.batch.config;
+package com.lucianoortizsilva.produto.batch.config;
 
 import javax.sql.DataSource;
 
@@ -14,12 +14,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
-import com.lucianoortizsilva.batch.dto.BatchInputProduto;
-import com.lucianoortizsilva.batch.entity.BatchOutputProduto;
-import com.lucianoortizsilva.batch.listener.JobCompletionNotificationListener;
-import com.lucianoortizsilva.batch.step.ProdutoProcessor;
-import com.lucianoortizsilva.batch.step.ProdutoReader;
-import com.lucianoortizsilva.batch.step.ProdutoWriter;
+import com.lucianoortizsilva.produto.batch.dto.BatchInputProduto;
+import com.lucianoortizsilva.produto.batch.entity.BatchOutputProduto;
+import com.lucianoortizsilva.produto.batch.listener.JobCompletionNotificationListener;
+import com.lucianoortizsilva.produto.batch.step.ProdutoProcessor;
+import com.lucianoortizsilva.produto.batch.step.ProdutoReader;
+import com.lucianoortizsilva.produto.batch.step.ProdutoWriter;
 
 
 

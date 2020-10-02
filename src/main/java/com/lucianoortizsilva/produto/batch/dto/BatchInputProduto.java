@@ -1,4 +1,4 @@
-package com.lucianoortizsilva.batch.dto;
+package com.lucianoortizsilva.produto.batch.dto;
 
 import java.io.Serializable;
 
