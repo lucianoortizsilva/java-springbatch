@@ -7,7 +7,7 @@ import org.springframework.scheduling.annotation.EnableScheduling;
 
 @EnableScheduling
 @SpringBootApplication
-@EntityScan(basePackages = { "com.lucianoortizsilva.batch.model", "com.lucianoortizsilva.cadastro.model" })
+@EntityScan(basePackages = { "com.lucianoortizsilva.batch.entity", "com.lucianoortizsilva.cadastro.entity" })
 public class Application {
 
 	public static void main(String[] args) {

@@ -1,46 +1,46 @@
-package com.lucianoortizsilva.batch.model;
+package com.lucianoortizsilva.cadastro.entity;
 
 import java.io.Serializable;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 import lombok.AllArgsConstructor;
+import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 
-@Entity
 @Getter
 @Setter
+@Entity
 @ToString
 @NoArgsConstructor
 @AllArgsConstructor
-public class ProdutoOutput implements Serializable {
+@EqualsAndHashCode(onlyExplicitlyIncluded = true)
+public class Produto implements Serializable {
 
-	private static final long serialVersionUID = -8665740626196988682L;
+	private static final long serialVersionUID = -5961740034924397246L;
 
 	@Id
+	@EqualsAndHashCode.Include
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 
-	@Column(length = 20)
-	private String descricao;
-
-	@Column(length = 13)
+	@Column
 	private String ean;
 
-	@Column(length = 40)
-	private String mensagem;
-
-	@Column(length = 14)
-	private String status;
+	@Column
+	private String descricao;
 
 	@Column
-	private Integer categoria;
+	@Enumerated(EnumType.STRING)
+	private Categoria categoria;
 
 }

@@ -1,4 +1,4 @@
-package com.lucianoortizsilva.cadastro.model;
+package com.lucianoortizsilva.cadastro.entity;
 
 public enum Categoria {
 

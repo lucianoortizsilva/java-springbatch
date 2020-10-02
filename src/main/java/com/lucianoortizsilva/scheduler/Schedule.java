@@ -26,7 +26,7 @@ public class Schedule {
 	private ProdutoService produtoService;
 
 	private static final long _UM_MINUTO = 60000;
-	private static final long _30_SEGUNDOS = 30000;
+	private static final long _10_SEGUNDOS = 10000;
 
 	@Scheduled(fixedRate = _UM_MINUTO)
 	public void executarBatch() throws Exception {
@@ -35,7 +35,7 @@ public class Schedule {
 		this.jobLauncher.run(job, jobParameters);
 	}
 
-	@Scheduled(fixedRate = _UM_MINUTO, initialDelay = _30_SEGUNDOS)
+	@Scheduled(fixedRate = _UM_MINUTO, initialDelay = _10_SEGUNDOS)
 	public void cadastrarProduto() throws Exception {
 		log.info(" Schedule cadastrarProduto() disparado com sucesso");
 		this.produtoService.cadastrarProdutos();

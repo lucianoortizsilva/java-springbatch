@@ -2,18 +2,18 @@ package com.lucianoortizsilva.batch.step;
 
 import org.springframework.batch.item.ItemProcessor;
 
-import com.lucianoortizsilva.batch.dto.ProdutoInput;
+import com.lucianoortizsilva.batch.dto.BatchInputProduto;
+import com.lucianoortizsilva.batch.entity.BatchOutputProduto;
 import com.lucianoortizsilva.batch.enumeration.Status;
-import com.lucianoortizsilva.batch.model.ProdutoOutput;
 
 import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
-public class ProdutoProcessor implements ItemProcessor<ProdutoInput, ProdutoOutput> {
+public class ProdutoProcessor implements ItemProcessor<BatchInputProduto, BatchOutputProduto> {
 
 	@Override
-	public ProdutoOutput process(final ProdutoInput item) throws Exception {
-		final ProdutoOutput output = new ProdutoOutput();
+	public BatchOutputProduto process(final BatchInputProduto item) throws Exception {
+		final BatchOutputProduto output = new BatchOutputProduto();
 		output.setEan(item.getEan());
 		output.setCategoria(item.getCategoria());
 		output.setDescricao(item.getDescricao().toUpperCase());

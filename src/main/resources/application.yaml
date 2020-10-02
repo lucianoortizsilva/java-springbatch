@@ -1,5 +1,4 @@
 spring:
-  batch.job.enabled: false
   datasource:
     url: jdbc:h2:mem:batchdb
     driverClassName: org.h2.Driver
@@ -15,3 +14,4 @@ spring:
        dialect: org.hibernate.dialect.H2Dialect
        show_sql: true
        ddl-auto: create
+  batch.job.enabled: false

@@ -1,4 +1,4 @@
-package com.lucianoortizsilva.batch;
+package com.lucianoortizsilva.batch.config;
 
 import javax.sql.DataSource;
 
@@ -14,9 +14,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
-import com.lucianoortizsilva.batch.dto.ProdutoInput;
+import com.lucianoortizsilva.batch.dto.BatchInputProduto;
+import com.lucianoortizsilva.batch.entity.BatchOutputProduto;
 import com.lucianoortizsilva.batch.listener.JobCompletionNotificationListener;
-import com.lucianoortizsilva.batch.model.ProdutoOutput;
 import com.lucianoortizsilva.batch.step.ProdutoProcessor;
 import com.lucianoortizsilva.batch.step.ProdutoReader;
 import com.lucianoortizsilva.batch.step.ProdutoWriter;
@@ -49,16 +49,15 @@ public class BatchConfig {
 	@Bean
 	public Step step1() {
 		return stepBuilderFactory.get("step1")
-				.<ProdutoInput, ProdutoOutput>chunk(10)
+				.<BatchInputProduto, BatchOutputProduto>chunk(10)
 				.reader(reader())
 				.processor(processor())
 				.writer(writer())
-				.allowStartIfComplete(true)
 				.build();
 	}
 
 	@Bean
-	public FlatFileItemReader<ProdutoInput> reader() {
+	public FlatFileItemReader<BatchInputProduto> reader() {
 		return new ProdutoReader();
 	}
 
@@ -68,7 +67,7 @@ public class BatchConfig {
 	}
 
 	@Bean
-	public JdbcBatchItemWriter<ProdutoOutput> writer() {
+	public JdbcBatchItemWriter<BatchOutputProduto> writer() {
 		return new ProdutoWriter(this.dataSource);
 	}
 

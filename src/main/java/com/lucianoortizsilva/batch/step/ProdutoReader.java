@@ -11,29 +11,30 @@ import org.springframework.batch.item.file.transform.DelimitedLineTokenizer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.ClassPathResource;
 
-import com.lucianoortizsilva.batch.dto.ProdutoInput;
+import com.lucianoortizsilva.batch.dto.BatchInputProduto;
 
 import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
-public class ProdutoReader extends FlatFileItemReader<ProdutoInput> {
+public class ProdutoReader extends FlatFileItemReader<BatchInputProduto> {
 
 	private static final String FILENAME = "produtos.csv";
+	
 	@Autowired
 	public ProdutoReader() {
 		setName("produtoReader");
 		setLinesToSkip(1);
 		setResource(new ClassPathResource(FILENAME));
-		setLineMapper(new DefaultLineMapper<ProdutoInput>() {
+		setLineMapper(new DefaultLineMapper<BatchInputProduto>() {
 			{
 				setLineTokenizer(new DelimitedLineTokenizer() {
 					{
-						setNames(new String[] { ProdutoInput.Fields.descricao, ProdutoInput.Fields.ean, ProdutoInput.Fields.categoria });
+						setNames(new String[] { BatchInputProduto.Fields.descricao, BatchInputProduto.Fields.ean, BatchInputProduto.Fields.categoria });
 					}
 				});
-				setFieldSetMapper(new BeanWrapperFieldSetMapper<ProdutoInput>() {
+				setFieldSetMapper(new BeanWrapperFieldSetMapper<BatchInputProduto>() {
 					{
-						setTargetType(ProdutoInput.class);
+						setTargetType(BatchInputProduto.class);
 					}
 				});
 			}
@@ -41,8 +42,8 @@ public class ProdutoReader extends FlatFileItemReader<ProdutoInput> {
 	}
 
 	@Override
-	public ProdutoInput read() throws Exception, UnexpectedInputException, ParseException {
-		final ProdutoInput input = super.read();
+	public BatchInputProduto read() throws Exception, UnexpectedInputException, ParseException {
+		final BatchInputProduto input = super.read();
 		if(!Objects.isNull(input)) {
 			log.info("Produto Lido: " + input);
 		}

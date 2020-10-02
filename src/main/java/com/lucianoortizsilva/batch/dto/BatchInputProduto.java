@@ -15,7 +15,7 @@ import lombok.experimental.FieldNameConstants;
 @NoArgsConstructor
 @AllArgsConstructor
 @FieldNameConstants
-public class ProdutoInput implements Serializable {
+public class BatchInputProduto implements Serializable {
 
 	private static final long serialVersionUID = -7210272980190151714L;
 	private String descricao;
