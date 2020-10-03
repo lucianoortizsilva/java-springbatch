@@ -47,8 +47,8 @@ public class BatchConfig {
 	}
 
 	@Bean
-	public Step step1() {
-		return stepBuilderFactory.get("step1")
+	public Step processarDadosProduto() {
+		return stepBuilderFactory.get("processarDadosProduto")
 				.<BatchInputProduto, BatchOutputProduto>chunk(10)
 				.reader(reader())
 				.processor(processor())

@@ -21,7 +21,7 @@ public class Schedule {
 
 	@Autowired
 	private Job job;
-	
+
 	@Autowired
 	private ProdutoService produtoService;
 
@@ -29,15 +29,15 @@ public class Schedule {
 	private static final long _10_SEGUNDOS = 10000;
 
 	@Scheduled(fixedRate = _UM_MINUTO)
-	public void executarBatch() throws Exception {
-		log.info(" Schedule executarBatch() disparado com sucesso");
+	public void processarArquivosEmLote() throws Exception {
+		log.info(" Schedule [PROCESSAR ARQUIVOS EM LOTE] disparado com sucesso");
 		final JobParameters jobParameters = new JobParametersBuilder().toJobParameters();
 		this.jobLauncher.run(job, jobParameters);
 	}
 
 	@Scheduled(fixedRate = _UM_MINUTO, initialDelay = _10_SEGUNDOS)
 	public void cadastrarProduto() throws Exception {
-		log.info(" Schedule cadastrarProduto() disparado com sucesso");
+		log.info(" Schedule [CADASTRAR PRODUTOS] disparado com sucesso");
 		this.produtoService.cadastrarProdutos();
 	}
 
