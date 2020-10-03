@@ -14,10 +14,14 @@ public class ProdutoProcessor implements ItemProcessor<BatchInputProduto, BatchO
 	@Override
 	public BatchOutputProduto process(final BatchInputProduto item) throws Exception {
 		final BatchOutputProduto output = new BatchOutputProduto();
-		output.setEan(item.getEan());
-		output.setCategoria(item.getCategoria());
-		output.setDescricao(item.getDescricao().toUpperCase());
-		output.setStatus(Status.AGUARDANDO.name());
+		try {
+			output.setEan(item.getEan());
+			output.setCategoria(item.getCategoria());
+			output.setDescricao(item.getDescricao().toUpperCase());
+			output.setStatus(Status.AGUARDANDO.name());
+		} catch (final Exception e) {
+			output.setStatus(Status.ERRO.name());
+		}
 		log.info("Produto processado: " + output);
 		return output;
 	}

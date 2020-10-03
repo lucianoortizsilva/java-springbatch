@@ -26,9 +26,10 @@ public class Schedule {
 	private ProdutoService produtoService;
 
 	private static final long _UM_MINUTO = 60000;
+	private static final long _05_SEGUNDOS = 5000;
 	private static final long _10_SEGUNDOS = 10000;
 
-	@Scheduled(fixedRate = _UM_MINUTO)
+	@Scheduled(fixedRate = _UM_MINUTO, initialDelay = _05_SEGUNDOS)
 	public void processarArquivosEmLote() throws Exception {
 		log.info(" Schedule [PROCESSAR ARQUIVOS EM LOTE] disparado com sucesso");
 		final JobParameters jobParameters = new JobParametersBuilder().toJobParameters();
